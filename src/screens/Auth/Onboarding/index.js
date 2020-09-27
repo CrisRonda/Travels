@@ -33,7 +33,7 @@ const Index = () => {
             label="Inicial sesión"
             onPress={() => navigate('SignIn')}
           />
-          <ButtonOutline label="Registrar" />
+          <ButtonOutline label="Registrar" onPress={() => navigate('SignUp')} />
         </Box>
       </SafeAreaView>
     </Box>

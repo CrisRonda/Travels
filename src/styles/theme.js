@@ -12,6 +12,9 @@ const theme = createTheme({
     gray: 'rgba(12,13,52,0.05)',
     darkGray: '#8a8d90',
     lightGray: '#fafafa',
+    shadow: 'rgba(0,0,0,0.63)',
+    shadowLight: 'rgba(0,0,0,0.35)',
+    cardBackground: 'rgba(0,0,0,0.05)',
   },
   spacing: {
     s: 8,
@@ -62,6 +65,10 @@ const theme = createTheme({
     },
     body: {
       fontSize: 20,
+      color: 'text',
+    },
+    caption: {
+      fontSize: 12,
       color: 'text',
     },
     button: {

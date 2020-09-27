@@ -1,21 +1,29 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {Image, SafeAreaView, StyleSheet} from 'react-native';
+import {Image, SafeAreaView, StyleSheet, Dimensions} from 'react-native';
 import {PanGestureHandler, RectButton} from 'react-native-gesture-handler';
 import {usePanGestureHandler} from 'react-native-redash';
 import Animated from 'react-native-reanimated';
 import {useSpring} from 'src/hooks/useSpring';
-import Icon from '../Icon';
-import {useNavigation} from '@react-navigation/native';
+import PrincipalScreen from './components/PrincipalScreen';
+import Details from './components/Details';
 
-const Layout = ({children, image, ComponentForm, heightForm}) => {
+const wHeight = Dimensions.get('screen').height;
+
+const LayoutNavigation = ({
+  children,
+  image,
+  onBack,
+  onNext,
+  principal,
+  details,
+}) => {
   const {gestureHandler, translation, velocity, state} = usePanGestureHandler();
-  const {goBack} = useNavigation();
   const translateY = useSpring({
     value: translation.y,
     velocity: velocity.y,
     state,
-    snapPoints: [-heightForm, 0],
+    snapPoints: [-wHeight * 0.9, 0],
   });
 
   return (
@@ -25,14 +33,10 @@ const Layout = ({children, image, ComponentForm, heightForm}) => {
           style={[
             {
               ...StyleSheet.absoluteFillObject,
+              paddingTop: 64,
             },
             {transform: [{translateY}]},
           ]}>
-          <RectButton
-            onPress={goBack}
-            style={{zIndex: 2, position: 'absolute', top: 64, left: 16}}>
-            <Icon name="chevron-left" size={40} />
-          </RectButton>
           {image && (
             <Image
               source={image}
@@ -43,25 +47,25 @@ const Layout = ({children, image, ComponentForm, heightForm}) => {
                 borderRadius: 30,
                 resizeMode: 'cover',
               }}
+              blurRadius={3}
             />
           )}
           {children}
+          <PrincipalScreen data={principal} onBack={onBack} onNext={onNext} />
         </Animated.View>
       </PanGestureHandler>
-      {ComponentForm}
+      <Details data={details} title={principal.title} />
     </SafeAreaView>
   );
 };
-Layout.propTypes = {
+LayoutNavigation.propTypes = {
   children: PropTypes.node.isRequired,
   image: PropTypes.any,
-  ComponentForm: PropTypes.node,
-  heightForm: PropTypes.number,
+  ComponentScreen: PropTypes.node,
 };
-Layout.defaultProps = {
+LayoutNavigation.defaultProps = {
   image: undefined,
-  ComponentForm: undefined,
-  heightForm: 300,
+  ComponentScreen: undefined,
 };
 
-export default Layout;
+export default LayoutNavigation;
