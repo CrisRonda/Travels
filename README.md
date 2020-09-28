@@ -7,28 +7,28 @@ Thanks for the design of Mauricio Lopez: [Link to XD](https://dribbble.com/shots
 # Screenshots
 ### Login
 <div style='margin-bottom: 8px'>
-<img width='100px' align="center" src="screenshots/001.png"/>
+<img width='150px' align="center" src="screenshots/001.png"/>
 </div>
 
 ### Iniciar sesión
 
 <div style='margin-bottom: 8px'>
-<img width='100px' align="center" src="screenshots/002.png"/>
-<img width='100px' align="center" src="screenshots/003.png"/>
+<img width='150px' align="center" src="screenshots/002.png"/>
+<img width='150px' align="center" src="screenshots/003.png"/>
 </div>
 
 ### Home
 
 <div style='margin-bottom: 8px'>
-<img width='80px' align="center" src="screenshots/004.png"/>
-<img width='80px' align="center" src="screenshots/005.png"/>
-<img width='80px' align="center" src="screenshots/006.png"/>
+<img width='150px' align="center" src="screenshots/004.png"/>
+<img width='150px' align="center" src="screenshots/005.png"/>
+<img width='150px' align="center" src="screenshots/006.png"/>
 </div>
 
 ### Details
 
 <div style='margin-bottom: 8px'>
-<img width='80px' align="center" src="screenshots/007.png"/>
+<img width='150px' align="center" src="screenshots/007.png"/>
 </div>
 
 
