@@ -11,7 +11,7 @@ const Index = () => {
     <Box flex={1} alignItems="center" justifyContent="space-around" p="xl">
       <BackgroundImage time={1500} images={backgroundImage} />
       <SafeAreaView style={{flex: 1, width: '100%'}}>
-        <Logo flex={1 / 3} />
+        <Logo row={false} flex={1 / 3} />
         <Box
           flex={1}
           width="100%"

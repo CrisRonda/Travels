@@ -10,7 +10,7 @@ const SignIn = () => {
       image={backgroundImage[0]}
       ComponentForm={<Form />}>
       <Box flex={1} justifyContent="flex-end" pb="xl">
-        <Logo />
+        <Logo row={false} />
       </Box>
       <Box flex={1 / 3} alignItems="center" justifyContent="flex-end">
         <Text variant="h5" marginBottom="m">
